@@ -1,0 +1,32 @@
+<h3>Add Product</h3>
+
+<form action="/api/products" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{product._id}}">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Product Name" value="{{product.name}}">
+        <div class="text-danger">
+            {{product.name}}</div>
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input type="text" class="form-control" name="price" placeholder="0.00" value="{{product.price}}">
+        <div>
+            {{product.price}}</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Description</label>
+            <input type="text" class="form-control" name="description" placeholder="Description" value="{{product.description}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+</form>
+
+<div>
+    <button id="getID" type="submit" class="btn btn-info"><i class="fa fa-database"></i> Get Singlet</button>
+</div>
+

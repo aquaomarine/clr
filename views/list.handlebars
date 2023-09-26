@@ -1,0 +1,29 @@
+<h3><a class="btn btn-secondary" href="/create"><i class="fa fa-plus"></i> Create New</a> Product List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+       {{#each list}}
+        <tr>
+            <td><a href="/api/products/{{this._id}}"><i  aria-hidden="true">{{this.name}}</i></a></td>
+            <td>{{this.price}}</td>
+            <td>{{this.description}}</td>
+            <td>
+                {{!-- <a href="/update/{{this._id}}/edit"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a> --}}
+                <a href="/update-edit/"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                 <a href="/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                {{!-- <form method="POST" action="/api/products/{{this._id}}?_method=DELETE">
+                    <button type="submit">Delete</button>
+                </form> --}}
+
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
